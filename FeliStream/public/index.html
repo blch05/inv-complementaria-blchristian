@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeliStream</title>
+</head>
+<body>
+    <h1>P2P Video Streaming</h1>
+
+    <!-- Subida de archivos -->
+    <input type="file" id="file-input" accept="video/*">
+    <button id="seed-btn">Subir y compartir video</button>
+
+    <!-- Mostrar el nombre del video y el botón para copiar el Magnet URI -->
+    <div id="video-info" style="display: none;">
+        <p>Nombre del video: <span id="video-name"></span></p>
+        <button id="copy-btn">Copiar enlace</button>
+    </div>
+
+    <!-- Lista de Magnet URI activos -->
+    <h2>Magnet URIs Activos</h2>
+    <ul id="magnet-list"></ul>
+
+    <!-- Campo para introducir el Magnet URI del video compartido -->
+    <input type="text" id="magnet-uri" placeholder="Magnet URI para cargar video">
+    <button id="download-btn">Reproducir video</button> <!-- Cambiado a "Reproducir video" -->
+
+    <!-- Reproductor de video -->
+    <video id="video-player" controls style="width: 600px; display: none;"></video>
+
+    <!-- Carga de WebTorrent desde un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/webtorrent/webtorrent.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
